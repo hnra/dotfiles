@@ -1,0 +1,161 @@
+[colors]
+black       =   ${xrdb:color0}
+red         =   ${xrdb:color1}
+green       =   ${xrdb:color2}
+yellow      =   ${xrdb:color3}
+blue        =   ${xrdb:color4}
+magneta     =   ${xrdb:color5}
+cyan        =   ${xrdb:color6}
+white       =   ${xrdb:color7}
+d_gray      =   ${xrdb:color8}
+l_red       =   ${xrdb:color9}
+l_green     =   ${xrdb:color10}
+l_yellow    =   ${xrdb:color11}
+l_blue      =   ${xrdb:color12}
+l_magneta   =   ${xrdb:color13}
+l_cyan      =   ${xrdb:color14}
+l_gray      =   ${xrdb:color15}
+
+[bar/top-left]
+width = 100%
+height = 25
+monitor = DVI-D-0
+underline-size = 1
+module-margin = 1
+module-padding = 2
+
+background = af252b31
+foreground = ${colors.white}
+
+font-0 = "Droid:size=11;1"
+font-1 = "DroidSansMonoForPowerline Nerd Font:size=10;2"
+font-2 = "FontAwesome:size=10;2"
+
+wm-restack = bspwm
+
+modules-left = bspwm
+modules-center = clock
+
+[bar/top-right]
+width = 100%
+height = 25
+monitor = DVI-I-1
+underline-size = 1
+module-margin = 1
+module-padding = 2
+module-extra-padding = 6
+
+background = af252b31
+foreground = ${colors.white}
+
+font-0 = "Droid:size=11;1"
+font-1 = "DroidSansMonoForPowerline Nerd Font:size=10;2"
+font-2 = "FontAwesome:size=10;2"
+
+wm-restack = bspwm
+
+modules-left = bspwm
+modules-center = clock
+
+[bar/center]
+width = 100%
+height = 35
+monitor = DP-1
+underline-size = 1
+module-margin = 1
+module-padding = 2
+module-extra-padding = 6
+
+background = af252b31
+foreground = ${colors.white}
+
+font-0 = "Droid:size=12;1"
+font-1 = "DroidSansMonoForPowerline Nerd Font:size=11;1"
+font-2 = "FontAwesome:size=11;1"
+
+wm-restack = bspwm
+
+modules-left = power bspwm
+modules-center = clock
+modules-right = volume
+
+[module/power]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-padding = ${root.module-padding}
+label-close-padding = ${root.module-padding}
+
+menu-0-2 = 
+menu-0-2-background = ${colors.red}
+menu-0-2-foreground = ${colors.black}
+menu-0-2-padding = ${root.module-extra-padding}
+menu-0-2-exec = systemctl poweroff
+menu-0-1 = 
+menu-0-1-background = ${colors.yellow}
+menu-0-1-foreground = ${colors.black}
+menu-0-1-padding = ${root.module-extra-padding}
+menu-0-1-exec = systemctl reboot
+menu-0-0 = 
+menu-0-0-background = ${colors.green}
+menu-0-0-foreground = ${colors.black}
+menu-0-0-padding = ${root.module-extra-padding}
+menu-0-0-exec = i3lock-fancy
+menu-0-3 = 
+menu-0-3-background = ${colors.magneta}
+menu-0-3-foreground = ${colors.black}
+menu-0-3-padding = ${root.module-extra-padding}
+menu-0-3-exec = switch-sink 1
+menu-0-4 = ♫
+menu-0-4-background = ${colors.cyan}
+menu-0-4-foreground = ${colors.black}
+menu-0-4-padding = ${root.module-extra-padding}
+menu-0-4-exec = switch-sink
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state>
+
+label-focused = 
+label-focused-foreground = ${colors.white}
+label-focused-underline = ${colors.white}
+label-focused-padding = ${root.module-padding}
+
+label-occupied = 
+label-occupied-foreground = ${colors.white}
+label-occupied-padding = ${root.module-padding}
+
+label-empty = 
+label-empty-foreground = ${colors.d_gray}
+label-empty-padding = ${root.module-padding}
+
+label-urgent = 
+label-urgent-foreground = ${colors.l_yellow}
+label-urgent-padding = ${root.module-padding}
+
+[module/clock]
+type = internal/date
+format =   <label>  
+date = %H:%M | %y-%m-%d
+label = %date%
+format-padding = 10
+format-underline = ${colors.l_magneta}
+
+[module/volume]
+type = internal/volume
+master-soundcard = "hw:1"
+master-mixer = Master
+mapping = true
+
+format-volume = <ramp-volume>  <label-volume>
+label-muted =   muted
+ramp-volume-0 = 
+ramp-volume-1 = 
+
+format-volume-underline = ${colors.magneta}
+format-volume-padding = ${root.module-padding}
+format-muted-underline = ${colors.magneta}
+format-muted-padding = ${root.module-padding}
+
+label =  %gb_used%

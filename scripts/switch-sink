@@ -1,0 +1,12 @@
+#!/bin/bash 
+if [ $1 == 1 ]; then
+	sink=`pacmd list-sinks | grep -B38 intel | grep index | cut -c12`
+else
+	sink=`pacmd list-sinks | grep -B38 DGX | grep index | cut -c12`
+fi
+pacmd set-default-sink $sink
+pacmd list-sink-inputs | grep index | while read line
+do
+pacmd move-sink-input `echo $line | cut -f2 -d' '` $sink
+
+done

@@ -1,0 +1,127 @@
+super + shift + Return
+  xdotool search --onlyvisible --classname Quake windowunmap \
+    || xdotool search --classname Quake windowmap \
+    || urxvt -name Quake -geometry 150x29+500+1
+
+super + ctrl + Return
+  xdotool search --onlyvisible --classname Doom windowunmap \
+    || xdotool search --classname Doom windowmap \
+    || urxvt -name Doom -geometry 150x29+500+735
+
+super + Print
+  scrot -se 'notify-send "File Saved at ~/Pictures/screenshots/$f" && feh $f && mv $f ~/Pictures/screenshots/'
+
+shift + Print
+  scrot -e 'notify-send "File Saved at ~/Pictures/screenshots/$f" && feh $f && mv $f ~/Pictures/screenshots/'
+
+End
+  switch-sink
+
+Home
+  switch-sink 1
+
+# terminal emulator
+super + Return
+	urxvt
+
+super + alt + l
+	bspc node -g locked=on
+
+Prior
+  bspc config pointer_follows_focus false && notify-send "Pointer follows focus: off"
+
+Next
+  bspc config pointer_follows_focus true && notify-send "Pointer follows focus: on"
+
+super + BackSpace
+	pkill -USR1 -x sxhkd
+
+# program launcher
+super + space
+	rofi -show run # -font "Droid 16" -width 900
+
+# window controller
+super + shift + space
+	rofi -show window #-font "Droid 16" -width 900
+
+#
+# bspwm hotkeys
+#
+
+# quit bspwm normally
+super + alt + BackSpace
+	bspc quit
+
+# close and kill
+super + {_,shift + }Escape
+	bspc node -{c,k}
+
+super + shift + BackSpace
+	bspc node -k
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+#
+# state/flags
+#
+
+super + f
+    bspc node -t fullscreen
+
+# set the window state
+super + {t,shift + t,s}
+	bspc node -t {tiled,pseudo_tiled,floating}
+
+# set the node flags
+super + ctrl + {x,y,z}
+	bspc node -g {locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous node
+super + {_,shift + }c
+	bspc node -f {next,prev}
+
+# focus the last node/desktop
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-7}
+	bspc {desktop -f,node -d} '{1-7}'
+
+#
+# resize tiled/floating
+#
+
+# expand the tiled space in the given direction
+super + alt + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+# contract the tiled space in the given direction
+super + alt + shift + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+# expand the tiled space in the given direction
+super + {u,i}
+	bspc node {@west -r -10,@east -r +10}
+
+# contract the tiled space in the given direction
+super + shift + {u,i}
+	bspc node {@east -r -10,@west -r +10}
+
+

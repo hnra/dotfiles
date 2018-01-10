@@ -1,0 +1,11 @@
+# Increase volume
+"pulseaudio-ctl up 5"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pulseaudio-ctl down 5"
+   XF86AudioLowerVolume
+
+# Mute volume
+"pulseaudio-ctl mute"
+    XF86AudioMute
