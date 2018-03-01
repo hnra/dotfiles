@@ -1,3 +1,9 @@
+super + plus
+    /home/henan/chg_vol.sh 1000
+
+super + dead_acute
+    /home/henan/chg_vol.sh -1000
+
 super + shift + Return
   xdotool search --onlyvisible --classname Quake windowunmap \
     || xdotool search --classname Quake windowmap \

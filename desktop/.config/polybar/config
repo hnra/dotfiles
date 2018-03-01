@@ -28,7 +28,7 @@ background = af252b31
 foreground = ${colors.white}
 
 font-0 = "Droid:size=11;1"
-font-1 = "DroidSansMonoForPowerline Nerd Font:size=10;2"
+font-1 = "DroidSansMono Nerd Font Mono:size=10;2"
 font-2 = "FontAwesome:size=10;2"
 
 wm-restack = bspwm
@@ -49,7 +49,7 @@ background = af252b31
 foreground = ${colors.white}
 
 font-0 = "Droid:size=11;1"
-font-1 = "DroidSansMonoForPowerline Nerd Font:size=10;2"
+font-1 = "DroidSansMono Nerd Font:size=10;2"
 font-2 = "FontAwesome:size=10;2"
 
 wm-restack = bspwm
@@ -70,7 +70,7 @@ background = af252b31
 foreground = ${colors.white}
 
 font-0 = "Droid:size=12;1"
-font-1 = "DroidSansMonoForPowerline Nerd Font:size=11;1"
+font-1 = "DroidSansMono Nerd Font:size=11;1"
 font-2 = "FontAwesome:size=11;1"
 
 wm-restack = bspwm

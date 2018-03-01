@@ -5,6 +5,7 @@ Plug 'tpope/vim-commentary'
 Plug 'kien/ctrlp.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'reedes/vim-colors-pencil'
+Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
 colorscheme nord

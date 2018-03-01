@@ -1,5 +1,5 @@
 {
-"workbench.colorTheme": "Material Theme",
+"workbench.colorTheme": "Nord",
     "editor.fontFamily": "'Hasklig', 'Font Awesome'",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "boundary",
@@ -16,5 +16,19 @@
     "haskell.ghcMod.executablePath": "stack",
     "[haskell]": {
         "editor.tabSize": 2
-    }
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "mssql.connections": [
+        {
+            "server": "localhost",
+            "database": "",
+            "authenticationType": "SqlLogin",
+            "user": "SA",
+            "password": "",
+            "emptyPasswordInput": false,
+            "savePassword": true,
+            "profileName": "LOCAL"
+        }
+    ]
 }
