@@ -1,0 +1,68 @@
+{
+    "editor.fontFamily": "Hack",
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "boundary",
+    "workbench.iconTheme": "eq-material-theme-icons-light",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Quiet Light",
+    "editor.fontLigatures": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.tabSize": 4,
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "[haskell]": {
+        "editor.tabSize": 2
+    },
+    "keyboard.dispatch": "keyCode",
+    "extensions.ignoreRecommendations": false,
+    "typescript.check.npmIsInstalled": false,
+    "html.autoClosingTags": false,
+    "explorer.confirmDelete": false,
+    "vim.enableNeovim": false,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["<C-v>"],
+            "after": [],
+            "commands": "editor.action.clipboardPasteAction",
+
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["Z","Z"],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ]
+        },
+        {
+            "before": ["<leader>", "r"],
+            "commands": [
+                "workbench.action.reloadWindow"
+            ]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-f>": false,
+        "<C-n>": false,
+        "<C-w>": false,
+        "<C-k>": false,
+        "<C-o>": false
+    },
+    "vim.leader": ",",
+    "prettier.printWidth": 100,
+    "prettier.tabWidth": 4,
+    "haskell.indentationRules.enabled": false,
+    "materialTheme.fixIconsRunning": false,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true
+}

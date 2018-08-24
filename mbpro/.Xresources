@@ -32,19 +32,20 @@
 *.color14: nord7
 *.color15: nord6
 
-#define trans 95
+#define trans 99
 
-URxvt*font: xft:Consolas:size=12:antialias=true:hinting=true,\
+URxvt*font: xft:Hack:size=14:antialias=true:hinting=true,\
 			xft:Powerline,\
 			xft:symbola:size=9,\
 			xft:FontAwesome,\
 			xft:DroidSansMonoForPowerline\ Nerd\ Font
-URxvt.internalBorder: 40
+URxvt.internalBorder: 20
 URxvt.borderColor: [trans]nord0
 URxvt.scrollBar: false
 URxvt.depth: 32
 URxvt.letterSpace: -1
 URxvt*loginShell: false
+URxvt.cursorColor: nord9
 
 Xft.autohint: 0
 Xft.hintstyle: hintnone
@@ -54,4 +55,4 @@ Xft.antialiasing: true
 
 *.foreground: nord6
 *.background: nord0
-URxvt.background: [trans]nord0 
+URxvt.background: [trans]nord0

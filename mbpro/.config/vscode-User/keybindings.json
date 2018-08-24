@@ -1,0 +1,62 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+space",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+shift+space",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Compile Sass"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "-workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "-redo",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "-redo",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "enter",
+        "command": "-acceptSelectedSuggestionOnEnter",
+        "when": "acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+    },
+    {
+        "key": "ctrl+z",
+        "command": "-undo",
+        "when": "textInputFocus && !editorReadonly"
+    }
+]

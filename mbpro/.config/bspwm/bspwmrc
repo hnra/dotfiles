@@ -1,8 +1,8 @@
 #!/bin/sh
 bspc config border_width         2
-bspc config window_gap          20
+bspc config window_gap          10
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 bspc config focus_by_distance    true
@@ -32,14 +32,15 @@ bspc rule -a URxvt:Wolfenstein state=floating border=off sticky=on
 bspc rule -a Thunar state=floating
 bspc rule -a feh state=floating
 bspc rule -a tk state=floating
+bspc rule -a Emacs state=tiled
 
 sxhkd &
 compton --unredir-if-possible &
 dunst &
-redshift &
 kdeconnect-cli &
 nitrogen --restore &
 wmname LG3D &
 polybar top &
-urvxt &
+thunar --daemon &
+redshift &
 
