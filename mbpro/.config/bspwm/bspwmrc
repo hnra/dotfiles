@@ -8,7 +8,6 @@ bspc config gapless_monocle      false
 bspc config focus_by_distance    true
 bspc config history_aware_focus  true
 bspc config focus_follows_pointer true
-bspc config pointer_follows_focus true
 
 bspc config pointer_modifier mod4
 bspc config pointer_action1 move
@@ -42,5 +41,5 @@ nitrogen --restore &
 wmname LG3D &
 polybar top &
 thunar --daemon &
-redshift &
+redshift -l 60:18 -t 6500:2500 &
 

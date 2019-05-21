@@ -2,7 +2,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+_Z_CMD=zcd
+[[ -r "/usr/share/z/z.sh" ]] && . /usr/share/z/z.sh
 
 export DEFAULT_USER=henan
 export EDITOR=nvim
@@ -18,7 +19,7 @@ else
     export LIGHT=0
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+source /home/henan/.rvm/scripts/rvm
 
 alias kdestart="startx ~/.xinitrc kde"
 alias vim="source /home/henan/.zshrc && nvim"
@@ -29,4 +30,14 @@ alias src="source /courses/TDDE09/labs/environment/bin/activate"
 
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.local/bin/"
+
+function cd() {
+    builtin cd "$@"
+    . /home/henan/auto_venv.sh
+}
+
+function z() {
+    zcd "$@"
+    . /home/henan/auto_venv.sh
+}
 
