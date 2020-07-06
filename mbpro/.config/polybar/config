@@ -1,0 +1,234 @@
+[colors]
+black       =   ${xrdb:color0}
+red         =   ${xrdb:color1}
+green       =   ${xrdb:color2}
+yellow      =   ${xrdb:color3}
+blue        =   ${xrdb:color4}
+magenta     =   ${xrdb:color5}
+cyan        =   ${xrdb:color6}
+white       =   ${xrdb:color7}
+d_gray      =   ${xrdb:color8}
+l_red       =   ${xrdb:color9}
+l_green     =   ${xrdb:color10}
+l_yellow    =   ${xrdb:color11}
+l_blue      =   ${xrdb:color12}
+l_magenta   =   ${xrdb:color13}
+l_cyan      =   ${xrdb:color14}
+l_gray      =   ${xrdb:color15}
+
+[bar/top]
+monitor=eDP-1
+width = 100%
+height = 35
+underline-size = 3
+module-margin = 1
+module-padding = 2
+dpi = 144
+
+background = af252b31
+foreground = ${colors.white}
+
+font-0 = "Droid:size=10;2"
+font-1 = "DroidSansMono Nerd Font:size=10;2"
+font-2 = "FontAwesome:size=10;2"
+
+modules-left = power bspwm
+modules-center = clock
+modules-right = cpu volume battery wifi
+
+wm-restack = bspwm
+
+[bar/hdmi]
+monitor=HDMI-2
+width = 100%
+height = 35
+underline-size = 3
+module-margin = 1
+module-padding = 2
+dpi = 144
+
+background = af252b31
+foreground = ${colors.white}
+
+font-0 = "Droid:size=10;2"
+font-1 = "DroidSansMono Nerd Font:size=10;2"
+font-2 = "FontAwesome:size=10;2"
+
+modules-left = power bspwm
+modules-center = clock
+modules-right = battery wifi
+
+wm-restack = bspwm
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+label-layout = %layout%
+label-layout-foreground = ${colors.black}
+label-layout-background = ${colors.magenta}
+label-layout-padding = ${root.module-padding}
+
+[module/algo]
+type = custom/text
+content = AL
+click-left = exec okular "/home/henan/Documents/Introduction to Algorithms.djvu" &
+content-background = ${colors.l_blue}
+content-foreground = ${colors.black}
+content-padding = ${root.module-padding}
+
+[module/power]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-padding = ${root.module-padding}
+label-close-padding = ${root.module-padding}
+
+menu-0-2 =  Power Off
+menu-0-2-background = ${colors.red}
+menu-0-2-foreground = ${colors.black}
+menu-0-2-padding = ${root.module-padding}
+menu-0-2-exec = systemctl poweroff
+menu-0-1 =  Reboot
+menu-0-1-background = ${colors.yellow}
+menu-0-1-foreground = ${colors.black}
+menu-0-1-padding = ${root.module-padding}
+menu-0-1-exec = systemctl reboot
+menu-0-0 =  Lock
+menu-0-0-background = ${colors.green}
+menu-0-0-foreground = ${colors.black}
+menu-0-0-padding = ${root.module-padding}
+menu-0-0-exec = i3lock
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state>
+
+label-focused = 
+label-focused-foreground = ${colors.white}
+label-focused-underline = ${colors.white}
+label-focused-padding = ${root.module-padding}
+
+label-occupied = 
+label-occupied-foreground = ${colors.white}
+label-occupied-padding = ${root.module-padding}
+
+label-empty = 
+label-empty-foreground = ${colors.d_gray}
+label-empty-padding = ${root.module-padding}
+
+label-urgent = 
+label-urgent-foreground = ${colors.l_yellow}
+label-urgent-padding = ${root.module-padding}
+
+[module/wifi]
+type = internal/network
+interface = wlp3s0
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected-width = 1
+label-connected = 
+label-connected-underline = ${colors.cyan}
+label-connected-padding = ${root.module-padding}
+label-disconnected = 
+label-disconnected-underline = ${colors.cyan}
+label-disconnected-padding = ${root.module-padding}
+
+[module/clock]
+type = internal/date
+format =   <label>  
+date = %H:%M | %y-%m-%d
+label = %date%
+format-padding = 10
+format-underline = ${colors.white}
+
+[module/battery]
+type = internal/battery
+
+full-at = 88
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+format-charging = <animation-charging>
+format-charging-padding = ${root.module-padding}
+format-charging-underline = ${colors.yellow}
+format-discharging = <ramp-capacity>
+format-discharging-padding = ${root.module-padding}
+format-discharging-underline = ${colors.yellow}
+format-full = <ramp-capacity>
+format-full-padding = ${root.module-padding}
+format-full-underline = ${colors.yellow}
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-9-foreground = ${colors.green}
+
+bar-capacity-width = 10
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+animation-charging-framerate = 750
+
+[module/cpu]
+type = internal/cpu
+
+format = <ramp-load>
+format-padding = ${root.module-padding}
+format-underline = ${colors.green}
+
+ramp-load-0 = ▁
+ramp-load-0-foreground = ${colors.d_gray}
+ramp-load-1 = ▂
+ramp-load-1-foreground = ${colors.d_gray}
+ramp-load-2 = ▃
+ramp-load-3 = ▄
+ramp-load-4 = ▅
+ramp-load-4-foreground = ${colors.yellow}
+ramp-load-5 = ▆
+ramp-load-5-foreground = ${colors.yellow}
+ramp-load-6 = ▇
+ramp-load-6-foreground = ${colors.red}
+ramp-load-7 = █
+ramp-load-7-foreground = ${colors.red}
+
+[module/volume]
+type = internal/pulseaudio
+master-mixer = Master
+
+format-volume = <ramp-volume>
+label-muted =  
+label-muted-foreground = ${colors.d_gray}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-1-foreground = ${colors.yellow}
+ramp-volume-2 = 
+ramp-volume-2-foreground = ${colors.red}
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-4-foreground = ${colors.yellow}
+ramp-volume-5 = 
+ramp-volume-5-foreground = ${colors.red}
+
+format-volume-underline = ${colors.red}
+format-volume-padding = ${root.module-padding}
+format-muted-underline = ${colors.red}
+format-muted-padding = ${root.module-padding}
+
