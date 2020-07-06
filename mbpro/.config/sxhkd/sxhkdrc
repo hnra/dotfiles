@@ -1,3 +1,6 @@
+alt + tab
+    /home/henan/switch_layout.sh
+
 super + XF86LaunchB
     /home/henan/.config/alacritty/swap_theme.sh
 
@@ -9,27 +12,27 @@ XF86AudioNext
 
 # keyboard brightness down
 XF86KbdBrightnessDown
-  light -s sysfs/leds/smc::kbd_backlight -U 5
+  sudo light -s sysfs/leds/smc::kbd_backlight -U 5
 
 # keyboard brightness up
 XF86KbdBrightnessUp
-  light -s sysfs/leds/smc::kbd_backlight -A 5
+  sudo light -s sysfs/leds/smc::kbd_backlight -A 5
 
 # brightness down
 XF86MonBrightnessDown
-	light -U 5
+	sudo light -U 5
 
 # brightness up
 XF86MonBrightnessUp
-	light -A 5
+	sudo light -A 5
 
 # brightness down
 super + XF86MonBrightnessDown
-	light -U 1
+	sudo light -U 1
 
 # brightness up
 super + XF86MonBrightnessUp
-	light -A 1
+	sudo light -A 1
 
 # lock
 super + z
